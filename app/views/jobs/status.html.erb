@@ -1,0 +1,32 @@
+<h1>Status For <%= @job.freelancer.titleize -%></h1>
+
+<% if @refresh %>
+  <meta http-equiv="refresh" content="3" url="<%= url_for(:action => 'status', :id => params[:id]) -%>" />
+<% end %>
+
+<fieldset class="progressContainer">
+  <legend>Current <%= @job.freelancer.titleize  -%> Progress</legend>
+  <div class="progressMessage">
+    <p><%= @job.message -%></p>
+  </div>  
+  <fieldset class="progressBar">
+    <legend><strong>Overall Progress:</strong> <%= @job.overall_current_stage  -%> of <%= @job.overall_total_stages -%> (<%= @job.overall_percentage  -%>%)</legend>
+    <div class="outerBar">
+      <div class="innerBar" style="width:<%= @job.overall_percentage -%>%;">
+        <%= @job.overall_percentage -%>%
+      </div>
+    </div>
+  </fieldset>
+  <% if @job.using_split_progress? -%>
+  <fieldset class="progressBar">
+    <legend><strong>Stage <%= @job.overall_current_stage -%> Progress:</strong><%= @job.stage_percentage -%>%, <%= BigDecimal('100') - @job.stage_percentage -%>% Remaining</legend>
+    <div class="outerBar">
+      <div class="innerBar" style="width:<%= @job.stage_percentage -%>%;">
+        <%= @job.stage_percentage -%>%
+      </div>
+    </div>
+  </fieldset>
+  <% end -%>
+</fieldset>
+
+

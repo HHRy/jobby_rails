@@ -1,0 +1,81 @@
+<h1>Jobs Listing</h1>
+
+<h2>Your Jobs</h2>
+
+<table class="jobsListTable">
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Job</td>
+      <th>Progress</td>
+      <th>Last Message</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @my_jobs.each_with_index do |job, i| -%>
+    <tr<%= ' class="stripe"' if i.odd? -%> id="job<%= job.id -%>">
+      <td>
+        <span class="l<%= job.status.downcase -%>">
+          <%= link_to "JOB#{job.id}", { :action => :status, :id => job.id } -%>
+        </span>
+      </td>
+      <td><%= job.freelancer.titleize -%></td>
+      <td>
+        <div class="weeOuterBar">
+          <div class="weeInnerBar" style="width:<%= job.overall_percentage -%>%;">
+            <%= job.overall_percentage -%>%
+          </div>
+        </div>
+      </td>
+      <td><%= job.message -%></td>
+    </tr>
+  <% end -%>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+        <ul class="tableKey">
+          <li><strong>Key to Symbols:</strong></li>
+          <li><span class="lrunning">Job is Running</span></li>
+          <li><span class="ldone">Job is Complete</span></li>
+        </ul>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<h2>Other Jobs</h2>
+<table class="jobsListTable">
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Job</td>
+      <th>Progress</td>
+      <th>Last Message</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if @other_jobs.empty? -%>
+    <tr>
+      <td colspan="5" style="text-align:center; font-weight:bold;">
+        There are no jobs to display
+      </td>
+    </tr>
+  <% else -%>
+  <% @other_jobs.each_with_index do |job, i| -%>
+    <tr<%= ' class="stripe"' if i.odd? -%>>
+      <td>JOB<%= job.id -%></td>
+      <td><%= job.freelancer.titleize -%></td>
+      <td>
+        <div class="weeOuterBar">
+          <div class="weeInnerBar" style="width:<%= job.overall_percentage -%>%;">
+            <%= job.overall_percentage -%>%
+          </div>
+        </div>
+      </td>
+      <td><%= job.message -%></td>
+    </tr>
+  <% end -%>
+  <% end -%>
+  </tbody>
+</table>
