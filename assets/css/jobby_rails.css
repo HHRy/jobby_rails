@@ -1,0 +1,223 @@
+/* ie6 trash */
+* html #gritter-notice-wrapper {
+	position:absolute; 
+}
+* html .gritter-top {
+	margin-bottom:-10px;
+}
+* html .gritter-item {
+	padding-bottom:0;
+}
+* html .gritter-bottom {
+	margin-bottom:0;
+}
+* html .gritter-close {
+	background:url(/images/gritter-close-ie6.gif);
+	width:22px;
+	height:22px;
+	top:7px;
+	left:7px;
+}
+
+/* the norm */
+#gritter-notice-wrapper {
+	position:fixed;
+	top:20px;
+	right:20px;
+	width:301px;
+	z-index:9999;
+}
+.gritter-item-wrapper {
+	position:relative;
+	margin:0 0 10px 0;
+	background:url('.'); /* ie7/8 fix */ 
+}
+.gritter-top {
+	background:url(/images/gritter.png) no-repeat right -30px;
+	height:10px;
+}
+.hover .gritter-top {
+	background-position:right -30px;
+}
+.gritter-bottom {
+	background:url(/images/gritter.png) no-repeat right bottom;
+	height:8px;
+	margin:0;
+}
+.hover .gritter-bottom {
+	background-position: bottom right;
+}
+.gritter-item {
+	display:block;
+	background:url(/images/gritter.png) no-repeat right -40px;
+	color:#000;
+	padding:2px 11px 8px 11px;
+	font-size: 11px;
+	font-family:verdana, sans-serif;
+}
+.hover .gritter-item {
+	background-position:right -40px;
+}
+.gritter-item p {
+	padding:0;
+	margin:0;
+}
+.gritter-close {
+	position:absolute;
+	top:5px;
+	left:3px;
+	background:url(/images/gritter.png) no-repeat left top;
+	cursor:pointer;
+	width:30px;
+	height:30px;
+}
+.gritter-title {
+	font-size:14px;
+	font-weight:bold;
+	padding:0 0 7px 0;
+	display:block;
+	text-shadow:1px 1px #000; /* Not supported by IE :( */
+}
+.gritter-image {
+	width:48px;
+	height:48px;
+	float:left;
+}
+.gritter-with-image,
+.gritter-without-image {
+	padding:0 0 5px 0;
+}
+.gritter-with-image {
+	width:220px;
+	float:right;
+}
+
+#activeJobs {
+    position:absolute;
+    top:3em;
+    left:0;
+    border:none;
+    text-align:left;
+    margin-left:1em;
+    background-image:url('/images/jobs_area_bg.png');
+    background-repeat:no-repeat;
+    width:180px;
+  }
+  
+    #activeJobs ul {
+      list-style:square;
+      float:none;
+    }
+
+    #activeJobs li {
+      float:left;
+      clear:left;
+      margin-bottom:4px;
+      margin-top:4px;
+      color:#eee;
+      border:none;
+    }
+	#activeJobs ul {
+	  display:block;
+	  margin:0px;
+	  padding:0px;
+	  float:none;
+	}
+
+	#activeJobs li {
+	  float:none;
+	  display:block;
+	  padding:0px;
+	  width:90%;
+	  margin-left:10px;
+	  text-align:left;
+	}
+
+	#jobsList .jobsLink img { border:none; }
+
+	#jobsList a { color:#000; text-decoration:none; }
+	#jobsList a:hover { text-decoration:underline; color:#000; }
+
+	.jobsListTable {
+	  width:940px;
+	}
+
+	.weeOuterBar{
+	  width:115px;
+	  border:1px solid #000;
+	}
+
+	.weeInnerBar{
+	  background:#267225;
+	  color:#FFFFFF;
+	  text-indent:5px;
+	}
+
+	.ldone {
+	  padding-left:20px;
+	  background-image:url('/images/accept.png');
+	  background-repeat:no-repeat;
+	  background-position:left;
+	}
+
+	.lrunning {
+	  padding-left:20px;
+	  background-image:url('/images/running_status.gif');
+	  background-repeat:no-repeat;
+	  background-position:left;
+	}
+
+	.lerror {
+	  padding-left:20px;
+	  background-image:url('/images/error.png');
+	  background-repeat:no-repeat;
+	  background-position:left;
+	}
+	
+
+	.progressContainer {
+	  width:80%;
+	  margin:0 auto;
+	}
+
+	  .progressContainer legend {
+	    font-weight:normal;
+	  }
+
+	  .progressContainer .progressBar {
+	    margin:0px;
+	    width:90%;
+	    margin:0 auto;
+	    margin-bottom:10px;
+	    margin-top:10px;
+	  }
+
+	.progressMessage p {
+	  margin:0px;
+	  padding:0px;
+	  font-size:150%;
+	  margin-bottom:0.6em;
+	}
+
+	#progressBarContainer{
+	  text-align:center;
+	  width:100%;
+	  padding-left:5%;
+	  padding-right:5%;
+	  height:25px;
+	}
+
+	.outerBar{
+	  border:1px solid #000000;
+	  text-align:left;
+	  color:black;
+	  width:100%;
+	}
+
+	.innerBar{
+		background:#267225;
+	  color:#FFFFFF;
+	  text-indent:15px;
+	  padding-top:5px;
+	  padding-bottom:5px;
+	}
