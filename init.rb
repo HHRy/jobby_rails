@@ -21,18 +21,6 @@ if not defined? RAILS_ROOT
   RAILS_ROOT = File.expand_path(File.dirname(__FILE__) + '/../../') rescue nil
 end
 
-# Sanity Checks - Make sure that JobbyRails has been installed!
-#
-require File.dirname(__FILE__) + '/sanity_checks.rb'
-unless SanityChecks.jobby_rails_installed?
-  puts SanityChecks.error_banner
-  SanityChecks.errors.each do |error|
-    puts "\n  *  #{error}"
-  end
-  puts "\n\nWill Now Exit!\n\n"
-  exit(-1)
-end
-
 # Set the Freelancer's path
 #
 JOBBY_FREELANCERS_PATH = RAILS_ROOT + '/lib/freelancers'
